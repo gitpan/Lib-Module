@@ -1,5 +1,5 @@
 package Lib::ModuleSymbol;
-# $Id: ModuleSymbol.pm,v 1.5 2004/03/21 02:17:19 kiesling Exp $
+# $Id: ModuleSymbol.pm,v 1.7 2004/03/28 00:27:53 kiesling Exp $
 
 # Copyright © 2001-2004 Robert Kiesling, rkies@cpan.org.
 #
@@ -36,14 +36,13 @@ sub array_as_str {
 }
 
 sub text_symbols {
-  my $p = shift;
-  my (@text, $pathname) = @_;
-  my $text = array_as_str (@text);
-  my (@ver) = grep /VERSION\s*?\=/, @text;
-  my ($package) = ($text =~ /^package\s+(.*?)\;$/m);
-  $p -> {pathname} = $pathname;
-  $p -> {packagename} = $package if $package;
-  $p -> {version} = $ver[0] if $ver[0];
+    my $p = shift;
+    my (@text) = @_;
+    my $text = array_as_str (@text);
+    my (@ver) = grep /VERSION.*\=/, @text;
+    my ($package) = ($text =~ /^package\s+(.*?)\;/ms);
+    $p -> {packagename} = $package if $package;
+    $p -> {version} = $ver[0];
 }
 
 sub pathname {
