@@ -8,7 +8,7 @@ push @ISA, qw( Exporter DB );
 
 require Exporter;
 require Carp;
-use Lib::ModuleSym;
+use Lib::ModuleSymbol;
 use DB;
 
 =head1  NAME
@@ -19,7 +19,7 @@ use DB;
 =head1 SYNOPSIS
 
   use Lib::Module;
-  use Lib::ModuleSym;
+  use Lib::ModuleSymbol;
   use Lib::SymbolRef;
 
   tie *Package::symbol, 'Lib::SymbolRef, 

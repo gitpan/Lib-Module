@@ -9,7 +9,7 @@ push @ISA, qw( Tk Exporter DB );
 require Exporter;
 require Carp;
 use File::Basename;
-use Lib::ModuleSym;
+use Lib::ModuleSymbol;
 use Lib::SymbolRef;
 use DB;
 

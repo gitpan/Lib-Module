@@ -9,7 +9,7 @@ use DB;
 
 =head1 NAME
 
-Lib::ModuleSym.pm -- Lexical scanning of Perl library modules.
+Lib::ModuleSymbol.pm -- Lexical scanning of Perl library modules.
 
 =head1 DESCRIPTION
 
@@ -24,7 +24,7 @@ in a Tk::MainWindow, false if not.
 
 =head1 REVISION
 
-$Id: ModuleSym.pm,v 0.52 2000/09/19 21:28:06 kiesling Exp $
+$Id: ModuleSymbol.pm,v 0.52 2000/09/19 21:28:06 kiesling Exp $
 
 =head1 SEE ALSO
 
