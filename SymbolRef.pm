@@ -1,7 +1,12 @@
 package Lib::SymbolRef;
-my $RCSRevKey = '$Revision: 0.51 $';
-$RCSRevKey =~ /Revision: (.*?) /;
-$VERSION=0.51;
+# $Id: SymbolRef.pm,v 1.4 2004/03/21 02:17:02 kiesling Exp $
+
+# Copyright © 2001-2004 Robert Kiesling, rkies@cpan.org.
+#
+# Licensed under the same terms as Perl.  Refer to the file,
+# "Artistic," for information.
+
+$VERSION=0.53;
 use vars qw( @ISA @EXPORT @EXPORT_OK $VERSION );
 push @ISA, qw( Exporter DB );
 @EXPORT_OK=qw($VERSION);
@@ -9,34 +14,6 @@ push @ISA, qw( Exporter DB );
 require Exporter;
 require Carp;
 use Lib::ModuleSymbol;
-use DB;
-
-=head1  NAME
-
-  Tk::Symbolref.pm -- Manage tied references to symbol table hash
-  entries.
-
-=head1 SYNOPSIS
-
-  use Lib::Module;
-  use Lib::ModuleSymbol;
-  use Lib::SymbolRef;
-
-  tie *Package::symbol, 'Lib::SymbolRef, 
-
-=head1 DESCRIPTION
-
-Much room for further expansion using these methods.
-
-=head1 REVISION
-
-$Id: SymbolRef.pm,v 0.51 2000/09/18 20:23:59 kiesling Exp kiesling $
-
-=head1 SEE ALSO
-
-The manual pages for Lib::Module(3), Tk::Browser(3), perltie(1).
-
-=cut
 
 sub TIESCALAR {
   my ($package, $name, $refer) = @_;
@@ -47,7 +24,10 @@ sub TIESCALAR {
 
 sub TIEHANDLE {
   my ($package, $name, $refer) = @_;
+  ### Until re-tied.
+  no warnings;
   my $obj = { name => $name, refs => () };
+  use warnings;
   bless $obj, $package;
   return $obj;
 }
