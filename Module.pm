@@ -1,5 +1,5 @@
 package Lib::Module;
-my $RCSRevKey = '$Revision: 0.65 $';
+my $RCSRevKey = '$Revision: 0.67 $';
 $RCSRevKey =~ /Revision: (.*?) /;
 $VERSION=0.65;
 use vars qw( @ISA @EXPORT @EXPORT_OK $VERSION );
@@ -51,7 +51,7 @@ in a Tk::MainWindow, false if not.
 
 =head1 REVISION
 
-$Id: Module.pm,v 0.65 2000/09/19 21:27:15 kiesling Exp $
+$Id: Module.pm,v 0.67 2001/07/15 18:29:45 kiesling Exp $
 
 =head1 SEE ALSO
 
@@ -136,7 +136,7 @@ sub scanlibs {
       if( &usesTk ) {
 	&Tk::Event::DoOneEvent(255);
       }
-      &Lib::ModuleSym::scannedpackages(());
+      &Lib::ModuleSymbol::scannedpackages(());
       if( $bname =~ /UNIVERSAL/ ) {
 	  $b -> modinfo( $i );
       } else {
@@ -160,7 +160,7 @@ sub modinfo {
     ($bname, $dirs, $ext) = fileparse($path, qw(\.pm \.pl));
     $self -> {pathname} = $path;
     @text = $self -> readfile;
-    my $p = new Lib::ModuleSym;
+    my $p = new Lib::ModuleSymbol;
     return undef if ! $p -> text_symbols( @text, $path );
     $self -> {moduleinfo} = $p ;
     $self -> {packagename} = $p -> {packagename};
