@@ -1,0 +1,20 @@
+NAME
+    Lib::ModuleSym.pm -- Lexical scanning of Perl library modules.
+
+DESCRIPTION
+    Refer to the Lib::Module(3) manual page.
+
+  Running Under Perl/Tk
+
+    This module can call Tk::Event::DoOneEvent() function to provide window
+    updates. The function usesTk() checks whether the this module is called
+    from a program that uses Perl/Tk and returns true if running in a
+    Tk::MainWindow, false if not.
+
+REVISION
+    $Id: ModuleSym.pm,v 0.52 2000/09/19 21:28:06 kiesling Exp $
+
+SEE ALSO
+    Refer to the manual pages: Lib::Module(3), Tk::Browser(3), perlmod(1),
+    perlmodlib(1), perl(1).
+

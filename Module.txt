@@ -1,0 +1,36 @@
+Lib::Module.pm
+SYNOPSIS
+      use Lib::Module;
+      use Lib::ModuleSym;
+      use Lib::SymbolRef;
+
+DESCRIPTION
+    Provides a hierarchical object reference for a Perl library module,
+    including the package name, file name, version, an array of stash
+    references, and superclasses, if any.
+
+    Module objects can be stored in a tree similar to the Perl class
+    hierarchy. At this time, the hierarchy tree used is only two deep,
+    because of the many different ways modules can communicate with each
+    other. Every module is a subclass of UNIVERSAL, which is the default
+    abstract superclass of all Perl packages.
+
+    The Lib::ModuleSym.pm module provides lexical scanning and lookup, and
+    provides cross referencing subroutines.
+
+    The Lib::SymbolRef module provides tied objects that correspond to stash
+    references, but this needs to be expanded.
+
+  Running Under Perl/Tk
+
+    This module can call Tk::Event::DoOneEvent() function to provide window
+    updates. The function usesTk() checks whether the this module is called
+    from a program that uses Perl/Tk and returns true if running in a
+    Tk::MainWindow, false if not.
+
+REVISION
+    $Id: Module.pm,v 0.65 2000/09/19 21:27:15 kiesling Exp $
+
+SEE ALSO
+    The manual pages: Tk::Browser(3), perlmod(1), perlmodlib(1), perl(1).
+
