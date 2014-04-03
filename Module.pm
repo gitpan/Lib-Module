@@ -1,6 +1,6 @@
 package Lib::Module;
 # $Id: Module.pm,v 1.13 2004/03/28 02:22:23 kiesling Exp $
-$VERSION=0.69;
+$VERSION=0.70;
 use vars qw( @ISA @EXPORT @EXPORT_OK $VERSION );
 push @ISA, qw(Exporter);
 
@@ -19,7 +19,9 @@ use DB;
 my @modulepathnames;
 my @libdirectories;
 
-=head1 Lib::Module.pm - Perl library module utilities.
+=head1 NAME
+
+Lib::Module.pm - Perl library module utilities.
 
 =head1 SYNOPSIS
 
